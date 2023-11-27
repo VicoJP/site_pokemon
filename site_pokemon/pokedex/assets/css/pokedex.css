@@ -16,13 +16,64 @@
     color: white;
 }
 
-.pokemon:nth-child(-n + 3){
-    background-color: #14A06F
+
+
+.normal { 
+    background-color: #A9A878
+}
+.fire { 
+    background-color: #F07F2F
+}
+.water { 
+    background-color: #6890F0
+}
+.grass { 
+    background-color: #78C84F
+}
+.electric { 
+    background-color: #F8D030
+}
+.poison { 
+    background-color: #A040A1
+}
+.ice { 
+    background-color: #98D8D8
+}
+.fighting { 
+    background-color: #C03028
+}
+.ground { 
+    background-color: #E0C069
+}
+.flying { 
+    background-color: #A890F0
+}
+.rock { 
+    background-color: #B7A038
+}
+.dark { 
+    background-color: #6F5848
+}
+.psychic { 
+    background-color: #F85888
+}
+.ghost { 
+    background-color: #705798
+}
+.steel { 
+    background-color: #B8B8D0
+}
+.bug { 
+    background-color: #98D8D8
+}
+.dragon { 
+    background-color: #7038F9
+}
+.fairy { 
+    background-color: #FFA3B1
 }
 
-.pokemon:nth-child(n + 4){
-    background-color: red;
-}
+
 
 .detail{
     display: flex;
