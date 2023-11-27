@@ -126,6 +126,11 @@
     border: none;
     border-radius: 1rem;
     color: white;
+    cursor: pointer;
+}
+
+.pagination button:active{
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Borda interna simulada */
 }
 
     @media screen and (max-width: 380px){
