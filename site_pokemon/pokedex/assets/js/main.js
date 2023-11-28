@@ -42,3 +42,5 @@ loadMoreButton.addEventListener('click', () => {
     }
     
 })
+
+// vou ter que criar um array que vai guardar os detalhes do pokemon, mudar umas funções que pegam os detalhes do pokemon e passar como parametro o indice
