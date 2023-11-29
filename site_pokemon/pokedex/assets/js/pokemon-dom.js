@@ -20,30 +20,30 @@ function handlePokemonClick(e) {
     
             pokeApi.getPokemonsTeste(`https://pokeapi.co/api/v2/pokemon/${pokemonIndex + 1}`).then((pokemons = []) => {
             const newHtmlPokeDetail = 
-            `<div id="divModal">
+            `<div id="divModal" class="${pokemons.type}">
             <div class="pokemonPhoto">
                     <span class="number">#${pokemons.number}</span>
                     <span class="name">${pokemons.name}</span>                
                     <div class="detail">
                         <ol class="types">
-                            <li class="type">grass</li>
-                            <li class="type">grass</li>
+                        ${pokemons.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                         </ol>
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
+                        <img src="${pokemons.photo}" alt="${pokemon.name}">
                     </div>
                 </div>
             <div class="pokemonDetails">
                 <ol class="about">
-                    <li>Species</li>
-                    <li>Species</li>
-                    <li>Species</li>
-                    <li>Species</li>
+                    <li>Height:</li>
+                    <li>Weight:</li>
+                    <li>Abilities:</li>
+                    ${pokemons.statsNames.map((stats) => `<li> ${stats}:</li>`).join('')}</li>
                 </ol>
                 <ol class="values">
-                    <li>Seed</li>
-                    <li>Seed</li>
-                    <li>Seed</li>
-                    <li>Seed</li>
+                    <li>${convertNumberToHeight(pokemons.height)}</li>
+                    <li>${convertNumberToWeight(pokemons.weight)}</li>
+                    <li>${pokemons.abilities.map((ability) => `<span> ${ability}</span>`)}</li>
+                    ${pokemons.statsValues.map((stats) => `<li> ${stats}</li>`).join('')}</li>
+                    
                 </ol>
             </div>
             </div>
