@@ -54,3 +54,4 @@ function convertNumberToWeight(weight){
     const weightFormated = weightInCm.toFixed(2) + 'kg';
     return weightFormated
 }
+

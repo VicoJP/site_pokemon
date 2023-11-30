@@ -1,27 +1,28 @@
 
 function showModel() {
     const pokemonDivs = document.querySelectorAll('.pokemon')
-
-    pokemonDivs.forEach((pokemonDiv, index) => {
+    pokemonDivs.forEach((pokemonDiv) => {
         pokemonDiv.addEventListener('click', handlePokemonClick);
     });
 }
 let _opened = false
 
+
 function handlePokemonClick(e) {
     const divPokemon = document.getElementById("modalPokemon")
     const divModal = document.getElementById("divModal")
-    if (!_opened){
+    console.log('O div modal é: ' + divModal)
+    if (!_opened) {
         const pokemon = e.target.closest('.pokemon')
         const pokemonList = Array.from(document.querySelectorAll('.pokemon'));
         if (pokemon && pokemonList.includes(pokemon)) {
             const pokemonIndex = pokemonList.indexOf(pokemon);
-            const pokemonData = pokemon.getAttribute('data-id-pokemon')
-    
+
             pokeApi.getPokemonsTeste(`https://pokeapi.co/api/v2/pokemon/${pokemonIndex + 1}`).then((pokemons = []) => {
-            const newHtmlPokeDetail = 
-            `<div id="divModal" class="${pokemons.type}">
+                const newHtmlPokeDetail =
+                    `<div id="divModal" class="${pokemons.type}">
             <div class="pokemonPhoto">
+                    <span id="icon_back" class="material-symbols-outlined" onclick=backModal()>arrow_back</span>
                     <span class="number">#${pokemons.number}</span>
                     <span class="name">${pokemons.name}</span>                
                     <div class="detail">
@@ -47,15 +48,24 @@ function handlePokemonClick(e) {
                 </ol>
             </div>
             </div>
-            ` 
-                divPokemon.innerHTML += newHtmlPokeDetail
-            })
-            _opened = true
-        } 
-        } else {
-            divPokemon.removeChild(divModal)
-            _opened = false
+            `
+            divPokemon.innerHTML += newHtmlPokeDetail
+            const iconBack = document.getElementById('icon_back');
+            iconBack.addEventListener('click', () => {
+                backModal(divPokemon)});
+            });
+            _opened = true;
+        }
+    } else {
+        backModal(divPokemon)
     }
+}
+
+
+
+function backModal(divPokemon, divModal) {
+    divPokemon.innerHTML = '';
+    _opened = false
 }
 document.addEventListener('DOMContentLoaded', showModel);
 

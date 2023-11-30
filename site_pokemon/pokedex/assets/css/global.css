@@ -12,6 +12,12 @@ body{
     width: 100vw;
 }
 
+.img_logo{
+    margin: 1rem auto;
+    display: flex;
+    width: 10rem;
+}
+
 @media screen and (min-width: 992px){
     .content {
         max-width: 768px;
