@@ -42,3 +42,16 @@ loadMoreButton.addEventListener('click', () => {
     }
     
 })
+
+function convertNumberToHeight(height){
+    const heightInCm = height / 10
+    const heightFormated = heightInCm.toFixed(2) + 'm';
+    return heightFormated
+}
+
+function convertNumberToWeight(weight){
+    const weightInCm = weight / 10
+    const weightFormated = weightInCm.toFixed(2) + 'kg';
+    return weightFormated
+}
+
