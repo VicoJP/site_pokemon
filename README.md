@@ -14,12 +14,14 @@ Este é um projeto simples que utiliza a PokeAPI para listar e exibir detalhes s
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git`
+git clone https://github.com/VicoJP/site_pokemon.git
 ```
 
 2. Abra o arquivo index.html no seu navegador.
 
-3. Navegue pela lista de Pokémon e clique em um Pokémon para ver mais detalhes
+3. Navegue pela lista de Pokémon e clique em um Pokémon para ver mais detalhes.
+
+4. Para acessar o projeto online via GitHub Pages, [clique aqui](https://vicojp.github.io/site_pokemon/).
 
 
 ## Estrutura do Projeto
